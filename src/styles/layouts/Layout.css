@@ -1,0 +1,23 @@
+.Layout {
+  &__container {
+    height: calc(100vh - 6rem);
+    @media screen(laptop) {
+      @apply grid;
+      grid-template-columns: calc(45rem * var(--scale)) 1fr;
+    }
+
+    &.active {
+      @apply relative;
+      .Layout__left {
+        transform: translateX(-100%);
+      }
+      .Layout__right {
+        @apply absolute inset-0;
+      }
+    }
+  }
+
+  &__right {
+    border-left: 0.15rem solid rgba(0, 0, 0, 0.15);
+  }
+}

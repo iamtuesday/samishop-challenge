@@ -1,9 +1,10 @@
-import { People, Result } from "@/models";
-import { getPeople } from "@/services";
+
 import { useEffect, useState } from "react";
+import { PeopleData } from "../models";
+import { getPeople } from "../services";
 
 export const useGetPeople = () => {
-  const [data, setData] = useState<People>({} as People);
+  const [data, setData] = useState<PeopleData>({} as PeopleData);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
 
@@ -12,8 +13,8 @@ export const useGetPeople = () => {
       try {
         setLoading(true);
         const { data } = await getPeople();
-        console.log(data)
         setData(data);
+
       } catch (error) {
         setError(true);
       } finally {

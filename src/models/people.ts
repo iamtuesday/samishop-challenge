@@ -1,13 +1,13 @@
 /*https://app.quicktype.io/ */
 
-export interface People {
+export interface PeopleData {
   count: number;
   next: string;
   previous: null;
-  results: Result[];
+  results: Person[];
 }
 
-export interface Result {
+export interface Person {
   name: string;
   height: string;
   mass: string;

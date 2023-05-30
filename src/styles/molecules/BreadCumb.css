@@ -1,0 +1,12 @@
+.BreadCumb {
+  @apply relative bg-black text-ravn-white py-[1rem] px-4 text-[1.7rem] font-bold;
+
+  &__btn {
+    @apply absolute top-[1rem] left-[5%] text-ravn-white;
+  }
+
+  @media screen(laptop) {
+    padding: calc(1.5rem * var(--scale)) calc(2rem * var(--scale));
+    font-size: calc(1.7rem * var(--scale));
+  }
+}

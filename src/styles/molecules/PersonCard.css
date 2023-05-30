@@ -1,0 +1,28 @@
+.PersonCard {
+  @apply py-[1.5rem] grid grid-cols-[85%_15%] items-center;
+  border-bottom: 0.15rem solid rgba(0, 0, 0, 0.15);
+  @media screen(laptop) {
+    padding: calc(1.5rem * var(--scale)) 0;
+  }
+
+  &__h2 {
+    @apply text-[1.7rem] font-bold text-ravn-dark;
+    /* @media screen(laptop) {
+      font-size: calc(1.9rem * var(--scale));
+    } */
+  }
+
+  &__p {
+    @apply text-[1.4rem] text-ravn-light font-normal leading-[125%];
+    /* @media screen(laptop) {
+      font-size: calc(1.6rem * var(--scale));
+    }*/
+  }
+
+  &__btn {
+    @apply text-[1.7rem] text-ravn-dark;
+    @media screen(laptop) {
+      font-size: calc(1.9rem * var(--scale));
+    }
+  }
+}

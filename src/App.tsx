@@ -1,15 +1,19 @@
 import { Routes, Route } from "react-router-dom";
-import { Layout } from "./components/layouts/Layout";
-import { Home } from "./pages";
+import { Home, Person } from "./pages";
+import { DefaultLayout, Layout } from "./components/layouts";
 
 function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/" element={<DefaultLayout />}>
           <Route index element={<Home />} />
-          <Route path="/about" element={<div>About</div>} />
-          <Route path="/contact" element={<div>Contact</div>} />
+
+          <Route path="/people" element={<Layout />}>
+            {/* <Route index element={<People />} /> */}
+            <Route path=":id" element={<Person />} />
+          </Route>
+
           <Route path="*" element={<div>Not Found</div>} />
         </Route>
       </Routes>

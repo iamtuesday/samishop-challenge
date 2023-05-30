@@ -2,7 +2,7 @@ import axios from "axios";
 import { getValidationError } from "./get-validation-error";
 import { SnackbarUtilities } from "./snackbar-manager";
 
-const baseURL = import.meta.VITE_PUBLIC_API_URL;
+const baseURL = import.meta.env.VITE_PUBLIC_API_URL;
 
 // Crear una instancia de axios
 export const axiosInstance = axios.create({
