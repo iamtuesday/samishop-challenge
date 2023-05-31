@@ -1,5 +1,5 @@
 import { Person, Vehicle } from "../../models";
-import { Spinner } from "../atoms";
+import { Heading, Spinner } from "../atoms";
 import { PersonGeneral, PersonVehicles } from "../molecules";
 
 interface PersonInformationProps {
@@ -13,18 +13,26 @@ export const PersonInformation: React.FC<PersonInformationProps> = ({
 }) => {
   const { vehicles, eye_color, hair_color, skin_color, birth_year } = person;
 
-  if (isLoading) return <Spinner />;
-
   return (
-    <section className="PersonInformation">
-      <PersonGeneral
-        eye_color={eye_color}
-        hair_color={hair_color}
-        skin_color={skin_color}
-        birth_year={birth_year}
-      />
+    <>
+      {isLoading && <Spinner />}
 
-      <PersonVehicles vehicles={vehicles as Vehicle[]} />
-    </section>
+      {!isLoading && !person && (
+        <Heading title="The character has no details." />
+      )}
+      
+      {!isLoading && person && (
+        <section className="PersonInformation">
+          <PersonGeneral
+            eye_color={eye_color}
+            hair_color={hair_color}
+            skin_color={skin_color}
+            birth_year={birth_year}
+          />
+
+          <PersonVehicles vehicles={vehicles as Vehicle[]} />
+        </section>
+      )}
+    </>
   );
 };
