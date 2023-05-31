@@ -17,10 +17,25 @@
     }
   }
 
+  &__left {
+    @apply laptop:overflow-auto;
+
+    &::-webkit-scrollbar {
+      width: 0.8rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      @apply bg-ravn-black rounded-[1rem];
+      background-image: linear-gradient(180deg, #828282 0%, #828282 10%);
+    }
+  }
+
   &__right {
     @apply hidden laptop:block;
     border-left: 0.15rem solid rgba(0, 0, 0, 0.15);
   }
-
-  
 }

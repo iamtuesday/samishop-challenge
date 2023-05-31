@@ -3,7 +3,13 @@ import { PeopleData } from "../models";
 import { getDetails, getPeople } from "../services";
 
 export const useGetPeople = () => {
-  const [data, setData] = useState<PeopleData>({} as PeopleData);
+  const [data, setData] = useState<PeopleData>({
+    count: 0,
+    next: "",
+    previous: "",
+    results: [],
+  });
+  const [currentPage, setCurrentPage] = useState<number>(1);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
 
@@ -12,7 +18,7 @@ export const useGetPeople = () => {
       try {
         setLoading(true);
         // Get people
-        const { data: peopleData } = await getPeople();
+        const { data: peopleData } = await getPeople(currentPage);
 
         // Get home world
         const peopleWithHomeworlds = await Promise.all(
@@ -24,7 +30,11 @@ export const useGetPeople = () => {
           })
         );
 
-        setData({ ...peopleData, results: peopleWithHomeworlds });
+        // setData({ ...peopleData, results: peopleWithHomeworlds });
+        setData((prevData) => ({
+          ...prevData,
+          results: [...prevData.results, ...peopleWithHomeworlds],
+        }));
       } catch (error) {
         setError(true);
       } finally {
@@ -33,7 +43,7 @@ export const useGetPeople = () => {
     };
 
     fetchPeople();
-  }, []);
+  }, [currentPage]);
 
-  return { data, error, loading };
+  return { data, error, loading, currentPage, setCurrentPage };
 };

@@ -1,3 +1,4 @@
+export * from './Button';
 export * from './DetailsItem';
 export * from './FallBack';
 export * from './Heading';

@@ -8,9 +8,8 @@ import { ErrorBoundary, cn } from "../../utilities";
 import { PeopleList } from "../organisms";
 import { FallBack } from "../atoms";
 
-
 export const Layout = () => {
-  const { error, data, loading } = useGetPeople();
+  const { error, data, loading, currentPage, setCurrentPage } = useGetPeople();
   const { isDesktop } = useWindowSize();
   const { name } = useCharacterStore();
   const { show } = useShow();
@@ -26,7 +25,12 @@ export const Layout = () => {
             resetCondition={data}
             error={error}
           >
-            <PeopleList loading={loading} listItems={data} />
+            <PeopleList
+              loading={loading}
+              listItems={data}
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+            />
           </ErrorBoundary>
         </div>
 
