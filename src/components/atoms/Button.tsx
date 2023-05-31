@@ -3,7 +3,7 @@ import { cn } from "../../utilities";
 interface ButtonProps {
   onClick?: () => void;
   className?: string;
-  children?: React.ReactNode;
+  children: React.ReactNode;
 }
 
 export const Button: React.FC<ButtonProps> = ({ children, onClick, className }) => {
