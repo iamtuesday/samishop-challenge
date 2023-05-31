@@ -1,12 +1,12 @@
 import { Outlet } from "react-router-dom";
 
-import { useGetPeople, useShow, useWindowSize } from "../../hooks";
-import useCharacterStore from "../../store";
+import { useGetPeople, useShow, useWindowSize } from "../hooks";
+import useCharacterStore from "../store";
 
-import { BreadCumb } from "../molecules";
-import { ErrorBoundary, cn } from "../../utilities";
-import { PeopleList } from "../organisms";
-import { FallBack } from "../atoms";
+import { BreadCumb } from "../components/molecules";
+import { ErrorBoundary, cn } from "../utilities";
+import { PeopleList } from "../components/organisms";
+import { FallBack } from "../components/atoms";
 
 export const Layout = () => {
   const { error, data, loading, currentPage, setCurrentPage } = useGetPeople();

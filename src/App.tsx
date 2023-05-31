@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { Home, People, Person } from "./pages";
-import { DefaultLayout, Layout } from "./components/layouts";
+import { DefaultLayout, Layout } from "./layouts";
 
 function App() {
   return (
