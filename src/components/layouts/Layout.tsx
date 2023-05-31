@@ -1,32 +1,23 @@
-import { useState, useEffect } from "react";
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+
+import { useGetPeople, useShow, useWindowSize } from "../../hooks";
+import useCharacterStore from "../../store";
 
 import { BreadCumb } from "../molecules";
 import { ErrorBoundary, cn } from "../../utilities";
 import { PeopleList } from "../organisms";
-import { useGetPeople, useWindowSize } from "../../hooks";
 import { FallBack } from "../atoms";
 
-export const Layout = () => {
-  const [show, setShow] = useState<boolean>(false);
-  const location = useLocation();
 
+export const Layout = () => {
   const { error, data, loading } = useGetPeople();
   const { isDesktop } = useWindowSize();
-
-  useEffect(() => {
-    const isShow = location.pathname.split("/")[2] !== undefined;
-
-    if (isShow) {
-      setShow(true);
-    } else {
-      setShow(false);
-    }
-  }, [location.pathname]);
+  const { name } = useCharacterStore();
+  const { show } = useShow();
 
   return (
     <main className="Layout">
-      <BreadCumb label="People" show={show} isDesktop={isDesktop} />
+      <BreadCumb label={name} show={show} isDesktop={isDesktop} />
 
       <div className={cn("Layout__container", show && !isDesktop && "active")}>
         <div className="Layout__left">

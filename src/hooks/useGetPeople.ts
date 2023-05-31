@@ -1,7 +1,6 @@
-
 import { useEffect, useState } from "react";
 import { PeopleData } from "../models";
-import { getPeople } from "../services";
+import { getDetails, getPeople } from "../services";
 
 export const useGetPeople = () => {
   const [data, setData] = useState<PeopleData>({} as PeopleData);
@@ -12,9 +11,20 @@ export const useGetPeople = () => {
     const fetchPeople = async () => {
       try {
         setLoading(true);
-        const { data } = await getPeople();
-        setData(data);
+        // Get people
+        const { data: peopleData } = await getPeople();
 
+        // Get home world
+        const peopleWithHomeworlds = await Promise.all(
+          peopleData.results.map(async (person) => {
+            const { data: homeworld } = await getDetails(
+              person.homeworld as string
+            );
+            return { ...person, homeworld };
+          })
+        );
+
+        setData({ ...peopleData, results: peopleWithHomeworlds });
       } catch (error) {
         setError(true);
       } finally {

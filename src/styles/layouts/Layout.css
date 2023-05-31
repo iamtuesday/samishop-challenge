@@ -1,7 +1,7 @@
 .Layout {
   &__container {
     height: calc(100vh - 6rem);
-    @media screen(laptop) {
+    @media screen(tabletxl) {
       @apply grid;
       grid-template-columns: calc(45rem * var(--scale)) 1fr;
     }
@@ -12,12 +12,15 @@
         transform: translateX(-100%);
       }
       .Layout__right {
-        @apply absolute inset-0;
+        @apply absolute inset-0 block;
       }
     }
   }
 
   &__right {
+    @apply hidden laptop:block;
     border-left: 0.15rem solid rgba(0, 0, 0, 0.15);
   }
+
+  
 }

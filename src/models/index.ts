@@ -1,2 +1,2 @@
-export * from './people';
+export * from './swapi';
 export * from './type-with-key';

@@ -12,7 +12,7 @@ export const axiosInstance = axios.create({
 // Interceptor de peticiones
 axiosInstance.interceptors.response.use(
   (response) => {
-    console.log("Starting Request", response);
+    // console.log("Starting Request", response);
     return response;
   },
   (error) => {

@@ -3,6 +3,7 @@
 @import "./atoms";
 @import "./layouts";
 @import "./molecules";
+@import "./organisms";
 
 @tailwind base;
 @tailwind components;

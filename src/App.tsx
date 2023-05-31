@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { Home, Person } from "./pages";
+import { Home, People, Person } from "./pages";
 import { DefaultLayout, Layout } from "./components/layouts";
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
           <Route index element={<Home />} />
 
           <Route path="/people" element={<Layout />}>
-            {/* <Route index element={<People />} /> */}
+            <Route index element={<People />} />
             <Route path=":id" element={<Person />} />
           </Route>
 

@@ -1,5 +1,6 @@
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { cn } from "../../utilities/clsx-tw-merge";
+import useCharacterStore from "../../store";
 
 interface BreadCumbProps {
   label: string;
@@ -7,11 +8,17 @@ interface BreadCumbProps {
   isDesktop: boolean;
 }
 
-export const BreadCumb: React.FC<BreadCumbProps> = ({ label, show, isDesktop }) => {
+export const BreadCumb: React.FC<BreadCumbProps> = ({
+  label,
+  show,
+  isDesktop,
+}) => {
   const navigate = useNavigate();
-
+  const { setPosition } = useCharacterStore();
+  
   const handleBack = () => {
     navigate("/people");
+    setPosition(0);
   };
 
   return (
@@ -22,7 +29,7 @@ export const BreadCumb: React.FC<BreadCumbProps> = ({ label, show, isDesktop }) 
         </button>
       )}
 
-      <h2>{show ? label : " People of Star Wars"}</h2>
+      <h2>{show && !isDesktop ? label : " People of Star Wars"}</h2>
     </div>
   );
 };

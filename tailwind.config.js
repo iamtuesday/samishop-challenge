@@ -19,6 +19,12 @@ export default {
         laptoplg: "1400px",
         desktop: "1700px",
       },
+      borderWidth: {
+        '3': '0.15rem',
+      },
+      borderColor: {
+        "black-opacity-15": "rgba(0, 0, 0, 0.15)",
+      },
     },
   },
   plugins: [],
