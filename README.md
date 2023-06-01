@@ -45,7 +45,7 @@ This may take a few minutes.
 
 ### Start
 
-To get the api up and running (and really see if it worked), run:
+To get the page up and running (and really see if it worked), run:
 
 ```shell
 pnpm dev
