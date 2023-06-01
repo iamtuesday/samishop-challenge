@@ -4,15 +4,15 @@ export const Home = () => {
   return (
     <main
       className="flex 
-    flex-col 
-    items-center 
-    justify-center 
-    flex-1 
-    min-h-screen
-    gap-[10rem] 
-    tabletxl:flex-row
+      flex-col 
+      items-center 
+      justify-center 
+      flex-1 
+      min-h-screen
+      gap-[10rem] 
+      tabletxl:flex-row
     bg-ravn-black
-    "
+      "
     >
       <figure
         className="h-auto 
@@ -40,15 +40,14 @@ export const Home = () => {
       >
         <h1
           className="flex 
-        items-center 
-        justify-center 
-        gap-3 
-        text-[5.5rem] 
-        font-bold 
-        text-ravn-emphasis
-        laptop:text-[calc(6rem_*_var(--scale))]
-
-        "
+          items-center 
+          justify-center 
+          gap-3 
+          text-[5.5rem] 
+          font-bold 
+          text-ravn-emphasis
+          laptop:text-[calc(6rem_*_var(--scale))]
+          "
         >
           Swapi
         </h1>
@@ -56,14 +55,14 @@ export const Home = () => {
         <p
           className="text-[2.5rem] 
         text-white 
-        font-semibold 
-        text-center
-        leading-[150%]
-        px-[3rem]
-        laptop:px-0
-        laptop:max-w-[calc(50rem_*_var(--scale))] 
-        laptop:text-[calc(2.9rem_*_var(--scale))]
-        "
+          font-semibold 
+          text-center
+          leading-[150%]
+          px-[3rem]
+          laptop:px-0
+          laptop:max-w-[calc(50rem_*_var(--scale))] 
+          laptop:text-[calc(2.9rem_*_var(--scale))]
+          "
         >
           A brief implementation of swapi where you can explore the amazing
           world of Star Wars

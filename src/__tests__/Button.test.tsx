@@ -4,16 +4,24 @@ import { Button } from "../components/atoms";
 
 describe("Button", () => {
   beforeEach(() => {
-    render(<Button className="bg-black">Hello World</Button>);
+    render(
+      <Button
+        className="bg-black"
+        onClick={() => console.log("Load more characters")}
+      >
+        Load more characters
+      </Button>
+    );
   });
 
   test("should show the button component", () => {
-    expect(screen.getByText("Hello World")).toBeDefined();
+    expect(screen.getByText("Load more characters")).toBeDefined();
   });
   
-  // test("should have the correct class", () => {
-  //   expect(screen.queryByText(/content/i)).toBeNull();
-  // });
-  
 
+  // test("The button is activated when clicked", () => {
+  //   const button = screen.getByText("Load more characters");
+  //   fireEvent.click(button);
+  //   expect(button).toBe("Load more characters");
+  // });
 });
