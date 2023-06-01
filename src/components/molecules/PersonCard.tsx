@@ -19,6 +19,11 @@ export const PersonCard: React.FC<PersonCardProps> = ({ person, idx }) => {
     navigate(`/people/${currentIdx}`);
     setPosition(currentIdx);
     setName(name);
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   //Validate species is an array
