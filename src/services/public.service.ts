@@ -1,4 +1,4 @@
-import { PeopleData, Person } from "../models";
+import { PeopleData, PersonData } from "../models";
 import { axiosInstance } from "../utilities";
 
 export const getPeople = async (page: number) => {
@@ -6,7 +6,7 @@ export const getPeople = async (page: number) => {
 };
 
 export const getPerson = async (id: string) => {
-  return await axiosInstance.get<Person>(`/people/${id}`);
+  return await axiosInstance.get<PersonData>(`/people/${id}`);
 };
 
 export const getDetails = async (url: string) => {

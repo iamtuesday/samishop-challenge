@@ -30,11 +30,12 @@ export const useGetPeople = () => {
           })
         );
 
-        // setData({ ...peopleData, results: peopleWithHomeworlds });
+        // Set data
         setData((prevData) => ({
           ...prevData,
           results: [...prevData.results, ...peopleWithHomeworlds],
         }));
+
       } catch (error) {
         setError(true);
       } finally {

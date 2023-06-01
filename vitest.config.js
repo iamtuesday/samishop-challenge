@@ -5,5 +5,7 @@ export default defineConfig({
     exclude: [...configDefaults.exclude],
     "environment": "jsdom",
     globals: true,
+    setupFiles: 'src/setupTests.ts',
+    css: true
   },
 });

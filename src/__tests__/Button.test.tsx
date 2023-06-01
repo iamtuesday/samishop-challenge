@@ -17,11 +17,5 @@ describe("Button", () => {
   test("should show the button component", () => {
     expect(screen.getByText("Load more characters")).toBeDefined();
   });
-  
 
-  // test("The button is activated when clicked", () => {
-  //   const button = screen.getByText("Load more characters");
-  //   fireEvent.click(button);
-  //   expect(button).toBe("Load more characters");
-  // });
 });

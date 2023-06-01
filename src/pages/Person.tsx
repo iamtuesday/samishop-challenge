@@ -8,6 +8,7 @@ export const Person = () => {
   const { id } = useParams();
   const { data, error, isLoading } = useGetPerson(id as string);
 
+  console.log(data);
   return (
     <>
       <ErrorBoundary

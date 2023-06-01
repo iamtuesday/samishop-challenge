@@ -13,11 +13,9 @@ export const Layout = () => {
   const { isDesktop } = useWindowSize();
   const { name } = useCharacterStore();
   const { show } = useShow();
-
   return (
-    <main className="Layout">
+    <main data-testid="location-display" className="Layout">
       <BreadCumb label={name} show={show} isDesktop={isDesktop} />
-
       <div className={cn("Layout__container", show && !isDesktop && "active")}>
         <div className="Layout__left">
           <ErrorBoundary

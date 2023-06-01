@@ -1,3 +1,5 @@
+import { Button } from ".";
+
 export const FallBack = () => {
   const handleRefresh = () => {
     window.location.reload();
@@ -11,23 +13,7 @@ export const FallBack = () => {
       <span className="text-ravn-light font-medium text-[1.6rem]">
         Refresh the page
       </span>
-      <button
-        onClick={handleRefresh}
-        className="text-white
-        bg-black 
-        rounded-full 
-        text-[1.5rem]
-        font-medium
-        px-10
-        py-2
-        transition-all
-        duration-300
-        ease-in-out
-        hover:opacity-80
-        "
-      >
-        Try again
-      </button>
+      <Button  onClick={handleRefresh}> Try again</Button>
     </div>
   );
 };

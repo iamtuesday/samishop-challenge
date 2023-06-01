@@ -1,9 +1,9 @@
-import { Person, Vehicle } from "../../models";
+import { PersonData, Vehicle } from "../../models";
 import { Heading, Spinner } from "../atoms";
 import { PersonGeneral, PersonVehicles } from "../molecules";
 
 interface PersonInformationProps {
-  person: Person;
+  person: PersonData;
   isLoading: boolean;
 }
 
