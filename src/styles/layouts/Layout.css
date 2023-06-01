@@ -35,7 +35,7 @@
   }
 
   &__right {
-    @apply hidden laptop:block;
+    @apply hidden tabletxl:block;
     border-left: 0.15rem solid rgba(0, 0, 0, 0.15);
   }
 }
