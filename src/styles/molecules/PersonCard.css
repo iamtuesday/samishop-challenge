@@ -1,8 +1,9 @@
 .PersonCard {
-  @apply py-[1.5rem] grid grid-cols-[85%_15%] items-center cursor-pointer;
+  @apply pl-[1.5rem] py-[1.5rem] grid grid-cols-[85%_15%] items-center cursor-pointer;
   border-bottom: 0.15rem solid rgba(0, 0, 0, 0.15);
   @media screen(laptop) {
     padding: calc(1.5rem * var(--scale)) 0;
+    padding-left: calc(2rem * var(--scale));
   }
 
   &__h2 {

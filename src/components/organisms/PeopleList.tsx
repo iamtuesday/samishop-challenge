@@ -18,7 +18,7 @@ export const PeopleList: React.FC<PeopleListProps> = ({
   return (
     <>
       {listItems.results.length > 0 && (
-        <div className="pl-[1.5rem]" data-testid="people-list">
+        <div data-testid="people-list">
           {listItems?.results.map((person, idx) => {
             return <PersonCard key={idx} person={person} idx={idx} />;
           })}
